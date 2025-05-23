@@ -1,0 +1,35 @@
+<div class="container py-5 border border-2 border-light-subtle mt-5">
+    <h1 class="text-center text-muted mb-4">ITI Tracks</h1>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <select name="departments" class="form-select" (change)="filterByDepartment()" [(ngModel)]="department">
+                <option>All</option>
+                <option>SD</option>
+                <option>Java</option>
+                <option>Design</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        @for (track of filteredTracks; track track.id) {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm border-start border-5">
+                <div class="card-body">
+                    <h4 class="card-title mb-2">
+                        {{ track.name }}
+                        <span
+                            class="badge py-2 {{ track.department === 'SD' ? 'bg-primary' : track.department === 'Java' ? 'bg-success' : 'bg-warning text-dark' }}">
+                            {{ track.department }}
+                        </span>
+                    </h4>
+                    <p class="card-text text-muted">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, dicta!
+                    </p>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

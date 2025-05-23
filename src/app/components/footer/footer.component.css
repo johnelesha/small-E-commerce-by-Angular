@@ -1,0 +1,30 @@
+.fp {
+    line-height: 1.5;
+    font-size: 17px;
+}
+
+.site-footer ul li a {
+    color: #797979;
+}
+
+.copyP {
+    padding-top: 15px;
+    padding-bottom: 70px;
+}
+
+.site-footer {
+    background-color: #333;
+    color: #797979;
+}
+
+.btn-custom {
+    background-color: #f23a2e;
+    border-color: #f23a2e;
+    letter-spacing: .1em;
+    padding: 8px 14px;
+}
+
+.btn-custom:hover {
+    background-color: #f72b1c;
+    border-color: #f72b1c;
+}

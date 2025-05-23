@@ -1,0 +1,17 @@
+img {
+    width: 150px;
+    height: 150px;
+}
+
+h5, p {
+    color: #575757;
+    line-height: 1.5;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 18px;
+}

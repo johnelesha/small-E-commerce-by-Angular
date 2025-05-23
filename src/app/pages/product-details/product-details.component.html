@@ -1,0 +1,62 @@
+<section class="container my-5">
+    @if (isLoading) {
+    <div class="text-center py-5">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    }
+    @else if (productData) {
+    <div class="card shadow-lg">
+        <div class="row g-0">
+            <div class="col-md-5 h-100">
+                <img [src]="productData.image" [alt]="productData.name" class="w-100 rounded-start"
+                    style="aspect-ratio: 1 / 1; object-fit: cover;">
+            </div>
+
+            <div class="col-md-7 h-100">
+                <div class="card-body p-4">
+                    <h1 class="card-title text-primary mb-4">{{ productData.name }}</h1>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 fs-5">
+                            <p class="mb-3"><strong>Price:</strong> ${{ productData.price }}</p>
+                            <p class="mb-3"><strong>Category:</strong> {{ productData.category }}</p>
+                        </div>
+                        <div class="col-md-6 fs-5">
+                            <p class="mb-3"><strong>Size:</strong> {{ productData.size }}</p>
+                            <p class="mb-3">
+                                <strong>Quantity: </strong>
+                                <span [class.text-danger]="productData.quantity === 0">{{ productData.quantity }}</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h5 class="text-secondary">Description</h5>
+                        <p class="fs-5">{{ productData.description }}</p>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <button class="btn btn-primary px-4 py-2" [ngClass]="{ 'disabled': productData.quantity === 0 }">
+                            Add to Cart
+                        </button>
+                        <button class="btn btn-outline-secondary px-4 py-2" [routerLink]="['/products']">
+                            Back to Products
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    @else {
+    <div class="alert alert-danger text-center py-5 px-4">
+        <h2 class="alert-heading mb-4">Product Not Found</h2>
+        <p class="fs-5">The product you're looking for does not exist.</p>
+        <button class="btn btn-primary mt-3" [routerLink]="['/products']">
+            Back to Products
+        </button>
+    </div>
+    }
+</section>

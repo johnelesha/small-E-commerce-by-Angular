@@ -1,0 +1,15 @@
+<div class="d-flex gap-3 align-items-center justify-content-center">
+    <select class="form-select w-25" [(ngModel)]="selectedCategory">
+        @for (category of categories; track category) {
+        <option [value]="category">{{ category | titlecase }}</option>
+        }
+    </select>
+
+    <select class="form-select w-25" [(ngModel)]="selectedSize">
+        @for (size of sizes; track size) {
+        <option [value]="size">{{ size | titlecase }}</option>
+        }
+    </select>
+
+    <button class="btn btn-primary w-25" (click)="applyFilters()">Filter</button>
+</div>

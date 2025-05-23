@@ -1,0 +1,12 @@
+h1 {
+    font-size: 80px;
+    font-weight: 300;
+    color: #4b4848;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #4b4848;
+}

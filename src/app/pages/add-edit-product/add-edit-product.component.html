@@ -1,0 +1,133 @@
+<div class="container mb-5 mt-2 py-2">
+    <h2 class="mb-4 text-center">
+        {{ isEditMode ? 'Edit Product' : 'Add Product' }}
+    </h2>
+
+    <form [formGroup]="productForm" (submit)="onSubmit()" class="card p-4 shadow-lg">
+        @if (getImage.value) {
+        <div class="text-center mb-4">
+            <img [src]="getImage.value" alt="Product preview" class="img-thumbnail" style="max-height: 200px">
+        </div>
+        }
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Product Name <strong class="text-danger">*</strong></label>
+                    <input type="text" class="form-control" placeholder="Enter product name" formControlName="name"
+                        [class.is-invalid]="getName.invalid && getName.touched">
+                    @if (getName.touched && getName.invalid) {
+                    <div class="invalid-feedback">
+                        @if (getName.hasError('required')) {
+                        <div>The name is required</div>
+                        }
+                        @if (getName.hasError('minlength')) {
+                        <div>The name must be at least 3 characters</div>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Description <strong class="text-danger">*</strong></label>
+                    <textarea class="form-control" rows="5" placeholder="Enter product description"
+                        formControlName="description"
+                        [class.is-invalid]="getDescription.invalid && getDescription.touched"></textarea>
+                    @if (getDescription.touched && getDescription.invalid) {
+                    <div class="invalid-feedback">
+                        @if (getDescription.hasError('required')) {
+                        <div>The description is required</div>
+                        }
+                        @if (getDescription.hasError('minlength')) {
+                        <div>The description must be at least 10 characters</div>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Image URL</label>
+                    <input type="url" class="form-control" placeholder="Enter image URL" formControlName="image">
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label class="form-label">Price <strong class="text-danger">*</strong></label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control" formControlName="price"
+                            [class.is-invalid]="getPrice.invalid && getPrice.touched">
+                    </div>
+                    @if (getPrice.touched && getPrice.invalid) {
+                    <div class="invalid-feedback">
+                        @if (getPrice.hasError('required')) {
+                        <div>The price is required</div>
+                        }
+                        @if (getPrice.hasError('min') || getPrice.hasError('max')) {
+                        <div>The price must be between $15 and $500</div>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Quantity <strong class="text-danger">*</strong></label>
+                    <input type="number" class="form-control" formControlName="quantity"
+                        [class.is-invalid]="getQuantity.invalid && getQuantity.touched">
+                    @if (getQuantity.touched && getQuantity.invalid) {
+                    <div class="invalid-feedback">
+                        @if (getQuantity.hasError('required')) {
+                        <div>The quantity is required</div>
+                        }
+                        @if (getQuantity.hasError('min')) {
+                        <div>The quantity must be at least 1</div>
+                        }
+                    </div>
+                    }
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Category <strong class="text-danger">*</strong></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="men" formControlName="category"
+                            id="categoryMen">
+                        <label class="form-check-label" for="categoryMen">Men</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" value="women" formControlName="category"
+                            id="categoryWomen">
+                        <label class="form-check-label" for="categoryWomen">Women</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Size <strong class="text-danger">*</strong></label>
+                    <select class="form-select" formControlName="size"
+                        [class.is-invalid]="getSize.invalid && getSize.touched">
+                        <option value="">Select size</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                    @if (getSize.touched && getSize.invalid) {
+                    <div class="invalid-feedback">
+                        Please select a size
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-outline-secondary" [routerLink]="['/products']">
+                Cancel
+            </button>
+            <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">
+                {{ isEditMode ? 'Update Product' : 'Add Product' }}
+            </button>
+        </div>
+    </form>
+</div>

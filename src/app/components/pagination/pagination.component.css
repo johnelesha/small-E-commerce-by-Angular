@@ -1,0 +1,33 @@
+.page-link.circle {
+    border-radius: 50% !important;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 2px;
+    color: #3ca59d;
+    background-color: transparent;
+    border: 1px solid #dee2e6;
+}
+
+.page-link.circle.active {
+    background-color: #3ca59d;
+    color: #fff;
+    border-color: #3ca59d;
+}
+
+.page-item.disabled .page-link.circle {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.pagination {
+    margin: 0;
+    padding: 0;
+}
+
+.pagin {
+    padding-bottom: 80px;
+}

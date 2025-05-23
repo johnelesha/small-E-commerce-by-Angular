@@ -1,0 +1,20 @@
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.dropdown-menu {
+    transition: all 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #3ca59d !important;
+}
+
+.dropdown-menu li:hover a {
+    color: #fff !important;
+}
+
+.navbar-nav > li {
+    padding: 8px 5px;
+}

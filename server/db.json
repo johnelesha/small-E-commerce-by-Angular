@@ -1,0 +1,163 @@
+{
+  "users": [
+    {
+      "full_name": "Emily Johnson",
+      "email": "emily.johnson@example.com",
+      "phone": "+1 (555) 123-4567",
+      "password": "SecurePass123!",
+      "age": 28,
+      "gender": "female",
+      "todos": [
+        "Order summer dresses",
+        "Check new arrivals",
+        "Contact support about return"
+      ],
+      "id": "d359"
+    },
+    {
+      "full_name": "Michael Chen",
+      "email": "michael.chen@example.com",
+      "phone": "+1 (555) 987-6543",
+      "password": "ChenPass789$",
+      "age": 35,
+      "gender": "male",
+      "todos": [
+        "Track order #12345",
+        "Review jeans collection"
+      ],
+      "id": "c9b6"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Men's T-Shirt",
+      "description": "Cotton crew neck t-shirt, slim fit.",
+      "price": 19.99,
+      "quantity": 10,
+      "category": "men",
+      "size": "M",
+      "image": "https://contents.mediadecathlon.com/p2606947/k$1c9e0ffdefc3e67bdeabc82be7893e93/dry-men-s-running-breathable-t-shirt-red.jpg?format=auto&quality=40&f=520x520"
+    },
+    {
+      "id": "2",
+      "name": "Women's Blouse",
+      "description": "Chiffon blouse with floral print.",
+      "price": 29.99,
+      "quantity": 5,
+      "category": "women",
+      "size": "S",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyDy_x2YxJatOe_yDEjtcqNzFq6CMV27IBTA&s"
+    },
+    {
+      "id": "3",
+      "name": "Men's Jeans",
+      "description": "Slim fit stretch denim jeans.",
+      "price": 49.99,
+      "quantity": 8,
+      "category": "men",
+      "size": "L",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuzf3NVgI_3osDivNlBmI4VdLXrY2O-KJMcA&s"
+    },
+    {
+      "id": "4",
+      "name": "Women's Skirt",
+      "description": "High-waisted pleated midi skirt.",
+      "price": 39.95,
+      "quantity": 6,
+      "category": "women",
+      "size": "M",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYDn22GxCO9WnvwDzwHBYviVNXg2r8T71Tuw&s"
+    },
+    {
+      "id": "5",
+      "name": "Men's Jacket",
+      "description": "Water-resistant lightweight windbreaker.",
+      "price": 59.5,
+      "quantity": 0,
+      "category": "men",
+      "size": "XL",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM7SHVnOJkvCPA4K-p3Y90rC7U9W5hd3fu3g&s"
+    },
+    {
+      "id": "6",
+      "name": "Women's Dress",
+      "description": "Sleeveless cotton summer dress.",
+      "price": 45,
+      "quantity": 4,
+      "category": "women",
+      "size": "L",
+      "image": "https://m.media-amazon.com/images/I/614gnlfQt2L._AC_SL1500_.jpg"
+    },
+    {
+      "id": "7",
+      "name": "Men's Hoodie",
+      "description": "Fleece pullover hoodie with front pocket.",
+      "price": 35,
+      "quantity": 9,
+      "category": "men",
+      "size": "M",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6jvDy6SCWUWUibVQ6_wGGaE4Bx4VswGaASA&s"
+    },
+    {
+      "id": "8",
+      "name": "Women's Leggings",
+      "description": "High-waist workout leggings.",
+      "price": 25,
+      "quantity": 7,
+      "category": "women",
+      "size": "S",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRICShQIVWS_JZ8LKh32p85yDLePos2PI1bPg&s"
+    },
+    {
+      "id": "9",
+      "name": "Men's Polo Shirt",
+      "description": "Classic cotton polo with embroidered logo.",
+      "price": 29.95,
+      "quantity": 3,
+      "category": "men",
+      "size": "L",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7P1KA7uxfiFvHc9Ut17VQu1tCL_H1tMhxZQ&s"
+    },
+    {
+      "id": "10",
+      "name": "Women's Cardigan",
+      "description": "Knit open-front cardigan sweater.",
+      "price": 55,
+      "quantity": 2,
+      "category": "women",
+      "size": "XL",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBgC7dzamE1W9Ju3F6hRuxBL7bHV8-nhWgpw&s"
+    },
+    {
+      "id": "11",
+      "name": "Men's Shorts",
+      "description": "Casual cotton cargo shorts.",
+      "price": 24.95,
+      "quantity": 11,
+      "category": "men",
+      "size": "M",
+      "image": "https://i5.walmartimages.com/asr/67fd8d15-7e42-4494-8b7e-6cc711775abc.fa0ef3da950a518e9af4150f30b5b683.jpeg"
+    },
+    {
+      "id": "12",
+      "name": "Women's shoes",
+      "description": "Quilted puffer shoes with hood.",
+      "price": 69.99,
+      "quantity": 1,
+      "category": "women",
+      "size": "L",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAjLtEiVvazhtfvPo6gAVFaUjKBcAje-N4CA&s"
+    },
+    {
+      "id": "1748034052268",
+      "name": "new product",
+      "description": "new clothes added",
+      "price": 200,
+      "quantity": 40,
+      "category": "men",
+      "size": "L",
+      "image": "https://images-cdn.ubuy.co.in/6613cb75a323b407bd014d6e-kaoayi-kids-clothing-for-boy-spring.jpg"
+    }
+  ]
+}

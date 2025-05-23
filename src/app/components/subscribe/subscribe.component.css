@@ -1,0 +1,35 @@
+.contact-section {
+    background: url('https://images.unsplash.com/photo-1744062063212-978f9cd1bb89?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+    height: 370px;
+    background-attachment: fixed;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.contact-section p {
+    font-size: 18px;
+    max-width: 600px;
+}
+
+.subscr {
+    color: white;
+}
+
+.subscr input {
+    width: 34vw;
+    font-size: 23px;
+}
+
+.subscr input::placeholder {
+    color: #ffffff7a;
+    opacity: 1;
+    font-style: italic;
+    font-weight: 200;
+}
