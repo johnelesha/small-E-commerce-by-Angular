@@ -23,18 +23,29 @@
                         [routerLinkActive]="'text-danger rounded'" [routerLinkActiveOptions]="{ exact: true }">ITI
                         Tracks</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer;" [routerLink]="['/todos']"
+                        [routerLinkActive]="'text-danger rounded'" [routerLinkActiveOptions]="{ exact: true }">Todos</a>
+                </li>
                 <li class="nav-item dropdown">
-                    <button class="nav-link dropdown-toggle" aria-expanded="false">
+                    @if (currentUser) {
+                    <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ currentUser.full_name }}
+                    </button>
+                    <ul class="dropdown-menu p-0 w-100 mt-2">
+                        <li>
+                            <button class="dropdown-item py-2 px-3" (click)="logout()">Logout</button>
+                        </li>
+                    </ul>
+                    } @else {
+                    <button class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         Account
                     </button>
                     <ul class="dropdown-menu p-0 w-100 mt-2">
-                        <li><a class="dropdown-item py-2 px-3" [routerLink]="['/login']"
-                                [routerLinkActive]="'text-danger rounded'"
-                                [routerLinkActiveOptions]="{ exact: true }">Login</a></li>
-                        <li><a class="dropdown-item py-2 px-3" [routerLink]="['/register']"
-                                [routerLinkActive]="'text-danger rounded'"
-                                [routerLinkActiveOptions]="{ exact: true }">Register</a></li>
+                        <li><a class="dropdown-item py-2 px-3" [routerLink]="['/login']">Login</a></li>
+                        <li><a class="dropdown-item py-2 px-3" [routerLink]="['/register']">Register</a></li>
                     </ul>
+                    }
                 </li>
             </ul>
         </div>

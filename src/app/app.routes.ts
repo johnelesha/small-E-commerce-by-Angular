@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ItiTracksComponent } from './pages/iti-tracks/iti-tracks.component';
+import { TodosComponent } from './pages/todos/todos.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,10 @@ export const routes: Routes = [
     {
         path: 'iti-tracks',
         component: ItiTracksComponent,
+    },
+    {
+        path: 'todos',
+        component: TodosComponent,
     },
     {
         path: 'products',

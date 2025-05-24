@@ -1,55 +1,135 @@
 <div class="container my-4">
-    <h2 class="mb-4 w-50 mx-auto text-center">Register</h2>
-    <form class="w-50 mx-auto">
-        <div class="mb-3">
-            <label for="fullName" class="form-label">Full Name</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Enter your full name" />
-        </div>
+    <div class="card shadow-sm rounded-3 p-4 w-75 mx-auto">
+        <h2 class="mb-4 text-center">Register</h2>
 
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email" />
-        </div>
-
-        <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter your password" />
-        </div>
-
-        <div class="mb-3">
-            <label for="confirmPassword" class="form-label">Confirm Password</label>
-            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password" />
-        </div>
-
-        <div class="mb-3">
-            <label for="phone" class="form-label">Phone</label>
-            <input type="text" class="form-control" id="phone" placeholder="Enter your phone number" />
-        </div>
-
-        <div class="mb-3">
-            <label for="age" class="form-label">Age</label>
-            <input type="number" class="form-control" min="12" max="75" id="age" placeholder="Enter your age" />
-        </div>
-
-        <div class="mb-3">
-            <label class="form-label d-block">Gender</label>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="male" value="male" />
-                <label class="form-check-label" for="male">Male</label>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="mb-3">
+                <label for="fullName" class="form-label">Full Name <strong class="text-danger">*</strong></label>
+                <input type="text" class="form-control rounded shadow-sm" id="fullName" formControlName="full_name"
+                    [class.is-invalid]="getFullName.invalid && getFullName.touched" placeholder="Enter your full name">
+                @if (getFullName.touched && getFullName.invalid) {
+                <div class="invalid-feedback">
+                    @if (getFullName.hasError('required')) {
+                    <div>Full name is required</div>
+                    }
+                    @if (getFullName.hasError('minlength')) {
+                    <div>Full name must be at least 3 characters</div>
+                    }
+                </div>
+                }
             </div>
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="gender" id="female" value="female" />
-                <label class="form-check-label" for="female">Female</label>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email <strong class="text-danger">*</strong></label>
+                <input type="email" class="form-control rounded shadow-sm" id="email" formControlName="email"
+                    [class.is-invalid]="getEmail.invalid && getEmail.touched" placeholder="Enter your email">
+                @if (getEmail.touched && getEmail.invalid) {
+                <div class="invalid-feedback">
+                    @if (getEmail.hasError('required')) {
+                    <div>Email is required</div>
+                    }
+                    @if (getEmail.hasError('email')) {
+                    <div>Please enter a valid email</div>
+                    }
+                </div>
+                }
             </div>
-        </div>
 
-        <div class="d-flex justify-content-between">
-            <button type="submit" class="btn btn-success w-25">Register</button>
-            <button type="reset" class="btn btn-warning w-25">Reset</button>
-        </div>
-    </form>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password <strong class="text-danger">*</strong></label>
+                <input type="password" class="form-control rounded shadow-sm" id="password" formControlName="password"
+                    [class.is-invalid]="getPassword.invalid && getPassword.touched" placeholder="Enter your password">
+                @if (getPassword.touched && getPassword.invalid) {
+                <div class="invalid-feedback">
+                    @if (getPassword.hasError('required')) {
+                    <div>Password is required</div>
+                    }
+                    @if (getPassword.hasError('minlength')) {
+                    <div>Password must be at least 6 characters</div>
+                    }
+                </div>
+                }
+            </div>
 
-    <div class="text-center mt-4">
-        Already have an account? <a [routerLink]="['/login']">Login</a>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">Confirm Password <strong
+                        class="text-danger">*</strong></label>
+                <input type="password" class="form-control rounded shadow-sm" id="confirmPassword"
+                    formControlName="confirmPassword"
+                    [class.is-invalid]="(getConfirmPassword.invalid || registerForm.hasError('mismatch')) && getConfirmPassword.touched"
+                    placeholder="Confirm your password">
+                @if (getConfirmPassword.touched && (getConfirmPassword.invalid || registerForm.hasError('mismatch'))) {
+                <div class="invalid-feedback">
+                    @if (getConfirmPassword.hasError('required')) {
+                    <div>Please confirm your password</div>
+                    }
+                    @if (registerForm.hasError('mismatch')) {
+                    <div>Passwords do not match</div>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone <strong class="text-danger">*</strong></label>
+                <input type="text" class="form-control rounded shadow-sm" id="phone" formControlName="phone"
+                    [class.is-invalid]="getPhone.invalid && getPhone.touched" placeholder="Enter your phone number">
+                @if (getPhone.touched && getPhone.invalid) {
+                <div class="invalid-feedback">
+                    @if (getPhone.hasError('required')) {
+                    <div>Phone number is required</div>
+                    }
+                    @if (getPhone.hasError('pattern')) {
+                    <div>Please enter a valid phone number (10-15 digits)</div>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="mb-3">
+                <label for="age" class="form-label">Age <strong class="text-danger">*</strong></label>
+                <input type="number" class="form-control rounded shadow-sm" id="age" formControlName="age" min="12"
+                    max="75" [class.is-invalid]="getAge.invalid && getAge.touched" placeholder="Enter your age">
+                @if (getAge.touched && getAge.invalid) {
+                <div class="invalid-feedback">
+                    @if (getAge.hasError('required')) {
+                    <div>Age is required</div>
+                    }
+                    @if (getAge.hasError('min') || getAge.hasError('max')) {
+                    <div>Age must be between 12 and 75</div>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label d-block">Gender <strong class="text-danger">*</strong></label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="male" formControlName="gender" value="male">
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="female" formControlName="gender" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                @if (getGender.touched && getGender.invalid) {
+                <div class="invalid-feedback d-block">Please select a gender</div>
+                }
+            </div>
+
+            @if (errorMessage) {
+            <div class="alert alert-danger">{{ errorMessage }}</div>
+            }
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-success w-25 shadow-sm"
+                    [disabled]="registerForm.invalid">Register</button>
+                <button type="reset" class="btn btn-warning w-25 shadow-sm">Reset</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-4">
+            Already have an account? <a [routerLink]="['/login']">Login</a>
+        </div>
     </div>
 </div>

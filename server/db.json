@@ -8,9 +8,18 @@
       "age": 28,
       "gender": "female",
       "todos": [
-        "Order summer dresses",
-        "Check new arrivals",
-        "Contact support about return"
+        {
+          "task": "Order summer dresses",
+          "completed": false
+        },
+        {
+          "task": "Check new arrivals",
+          "completed": true
+        },
+        {
+          "task": "Contact support about return",
+          "completed": false
+        }
       ],
       "id": "d359"
     },
@@ -22,10 +31,105 @@
       "age": 35,
       "gender": "male",
       "todos": [
-        "Track order #12345",
-        "Review jeans collection"
+        {
+          "task": "Track order #12345",
+          "completed": true
+        },
+        {
+          "task": "Review jeans collection",
+          "completed": false
+        }
       ],
       "id": "c9b6"
+    },
+    {
+      "full_name": "Sarah Williams",
+      "email": "sarah.williams@example.com",
+      "phone": "+44 7911 123456",
+      "password": "London2024!",
+      "age": 42,
+      "gender": "female",
+      "todos": [
+        {
+          "task": "Buy running shoes",
+          "completed": false
+        },
+        {
+          "task": "Schedule gym sessions",
+          "completed": true
+        },
+        {
+          "task": "Update wardrobe",
+          "completed": false
+        }
+      ],
+      "id": "a7f2"
+    },
+    {
+      "full_name": "David Kim",
+      "email": "david.kim@example.com",
+      "phone": "+82 10-5678-1234",
+      "password": "SeoulPassword1",
+      "age": 31,
+      "gender": "male",
+      "todos": [
+        {
+          "task": "Research winter coats",
+          "completed": true
+        },
+        {
+          "task": "Compare prices online",
+          "completed": true
+        },
+        {
+          "task": "Visit local stores",
+          "completed": false
+        }
+      ],
+      "id": "e5d1"
+    },
+    {
+      "full_name": "Alex Taylor",
+      "email": "alex.taylor@example.com",
+      "phone": "+1 (555) 555-1212",
+      "password": "NonBinaryPass42",
+      "age": 26,
+      "gender": "male",
+      "todos": [
+        {
+          "task": "Organize closet",
+          "completed": false
+        },
+        {
+          "task": "Donate old clothes",
+          "completed": false
+        },
+        {
+          "task": "Plan shopping budget",
+          "completed": true
+        }
+      ],
+      "id": "b3c8"
+    },
+    {
+      "id": "jo55",
+      "full_name": "john elesha",
+      "email": "jo55.elesha@gmail.com",
+      "phone": "010245566",
+      "password": "john12345",
+      "age": 25,
+      "gender": "male",
+      "todos": []
+    },
+    {
+      "id": "e489",
+      "full_name": "besho",
+      "email": "besho.elesha@gmail.com",
+      "password": "besho123",
+      "phone": "0125488565",
+      "age": 18,
+      "gender": "male",
+      "todos": []
     }
   ],
   "products": [

@@ -1,9 +1,9 @@
-<div class="container py-5 border border-2 border-light-subtle mt-5">
-    <h1 class="text-center text-muted mb-4">ITI Tracks</h1>
+<div class="container p-4 border border-2 border-light-subtle my-5">
+    <h1 class="text-center mb-5 text-primary fw-bold fs-1 fst-italic mt-2">ITI Tracks</h1>
 
     <div class="row mb-3">
-        <div class="col-md-4">
-            <select name="departments" class="form-select" (change)="filterByDepartment()" [(ngModel)]="department">
+        <div class="col-md-4 offset-md-4 mb-4">
+            <select name="departments" class="form-select py-2 fs-5" (change)="filterByDepartment()" [(ngModel)]="department">
                 <option>All</option>
                 <option>SD</option>
                 <option>Java</option>

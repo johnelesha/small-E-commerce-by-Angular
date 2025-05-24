@@ -1,0 +1,28 @@
+@if (currentUser) {
+<div class="container my-5 border border-1 border-primary rounded p-5">
+    <h2 class="text-center text-primary fw-bold mb-5 fs-1 fst-italic">Enter Todo</h2>
+    <div class="row">
+        <div class="col-md-9 mb-3">
+            <input type="text" class="form-control py-3 ps-4" placeholder="Enter Todo" [(ngModel)]="todoInput" />
+        </div>
+        <div class="col-md-3 mb-3">
+            <button class="btn btn-primary w-100 py-3 rounded-0" (click)="addTodo()">
+                Add New Todo
+            </button>
+        </div>
+    </div>
+</div>
+
+
+@if (todos.length > 0) {
+<app-todo-table [todos]="todos" (complete)="completeTodo($event)" (remove)="removeTodo($event)" />
+} @else {
+<p class="text-center text-muted mt-4">No todos yet. Start by adding one above!</p>
+}
+
+} @else {
+<div class="container text-center my-5 py-5 border border-1 border-danger rounded">
+    <h4 class="text-danger">You must be logged in to manage your todos.</h4>
+    <a class="btn btn-outline-primary mt-3" [routerLink]="['/login']">Go to Login</a>
+</div>
+}
