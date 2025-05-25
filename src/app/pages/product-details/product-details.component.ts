@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../models/iproduct';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { DynamicProductsDataService } from '../../services/dynamic-products-data.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-details',
@@ -13,16 +14,19 @@ import { DynamicProductsDataService } from '../../services/dynamic-products-data
 export class ProductDetailsComponent implements OnInit {
   productData: IProduct | undefined;
   isLoading: boolean = true;
+  showAddedMessage: boolean = false;
+  addCount: number = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private productService: DynamicProductsDataService
+    private productService: DynamicProductsDataService,
+    private cartService: CartService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     const productId = this.route.snapshot.paramMap.get('id');
-    console.log(productId);
-    
+
     if (!productId) {
       this.isLoading = false;
       return;
@@ -34,8 +38,6 @@ export class ProductDetailsComponent implements OnInit {
       next: (product) => {
         this.productData = product;
         this.isLoading = false;
-        console.log(this.productData);
-        console.log(product);
       },
       error: () => {
         this.isLoading = false;
@@ -43,4 +45,16 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
 
+  addToCart(): void {
+    if (this.productData) {
+      const added = this.cartService.addToCart(this.productData);
+      if (added) {
+        this.showAddedMessage = true;
+        this.addCount++;
+        setTimeout(() => {
+          this.showAddedMessage = false;
+        }, 1500);
+      }
+    }
+  }
 }

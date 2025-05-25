@@ -148,7 +148,7 @@
       "name": "Women's Blouse",
       "description": "Chiffon blouse with floral print.",
       "price": 29.99,
-      "quantity": 5,
+      "quantity": 4,
       "category": "women",
       "size": "S",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyDy_x2YxJatOe_yDEjtcqNzFq6CMV27IBTA&s"
@@ -158,7 +158,7 @@
       "name": "Men's Jeans",
       "description": "Slim fit stretch denim jeans.",
       "price": 49.99,
-      "quantity": 8,
+      "quantity": 7,
       "category": "men",
       "size": "L",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuzf3NVgI_3osDivNlBmI4VdLXrY2O-KJMcA&s"

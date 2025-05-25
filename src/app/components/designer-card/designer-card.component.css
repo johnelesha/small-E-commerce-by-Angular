@@ -3,7 +3,8 @@ img {
     height: 150px;
 }
 
-h5, p {
+h5,
+p {
     color: #575757;
     line-height: 1.5;
 }

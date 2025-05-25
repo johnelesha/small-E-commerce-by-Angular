@@ -1,0 +1,17 @@
+<div class="container p-4 border border-2 border-light-subtle my-5">
+    <h1 class="text-center mb-4 text-primary fw-bold fs-1 fst-italic mt-2">Shop Collections</h1>
+
+    <div class="row mb-3">
+        <div class="col-md-4 offset-md-4 mb-4">
+            <app-category-filter (departmentSelected)="onDepartmentSelected($event)" />
+        </div>
+    </div>
+
+    <div class="row">
+        @for (category of filteredCategories; track category.id) {
+        <div class="col-md-4 mb-4">
+            <app-category-card [category]="category" />
+        </div>
+        }
+    </div>
+</div>

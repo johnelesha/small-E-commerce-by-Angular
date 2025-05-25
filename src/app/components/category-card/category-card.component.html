@@ -1,0 +1,14 @@
+<div class="card h-100 shadow-sm border-start border-5">
+    <div class="card-body">
+        <h4 class="card-title mb-2">
+            {{ category.name }}
+            <span
+                class="badge py-2 {{ category.department === 'Men' ? 'bg-primary' : category.department === 'Women' ? 'bg-success' : 'bg-warning text-dark' }}">
+                {{ category.department }}
+            </span>
+        </h4>
+        <p class="card-text text-muted">
+            Discover our stylish {{ category.name.toLowerCase() }} designed for quality and comfort.
+        </p>
+    </div>
+</div>

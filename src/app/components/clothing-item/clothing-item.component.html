@@ -1,0 +1,12 @@
+<div class="row item bg-light-subtle mb-3">
+    <div class="col-4">
+        <div class="right-side" [style.backgroundImage]="'url(' + item.image + ')'"></div>
+    </div>
+    <div class="col-8 ps-5 d-flex flex-column justify-content-center">
+        <h3 class="text-success fw-light mb-3 text-opacity-75">
+            {{ item.name }}
+        </h3>
+        <p class="mb-3 text-body-tertiary">{{ item.description }}</p>
+        <p class="mb-4 text-body-tertiary">{{ item.price }} / {{ item.category }}</p>
+    </div>
+</div>

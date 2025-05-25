@@ -6,8 +6,9 @@ import { AddEditProductComponent } from './pages/add-edit-product/add-edit-produ
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { ItiTracksComponent } from './pages/iti-tracks/iti-tracks.component';
 import { TodosComponent } from './pages/todos/todos.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ShopCategoriesComponent } from './pages/shop-categories/shop-categories.component';
 
 export const routes: Routes = [
     {
@@ -20,8 +21,8 @@ export const routes: Routes = [
         component: HomeComponent,
     },
     {
-        path: 'iti-tracks',
-        component: ItiTracksComponent,
+        path: 'shopCategory',
+        component: ShopCategoriesComponent,
     },
     {
         path: 'todos',
@@ -38,6 +39,10 @@ export const routes: Routes = [
     {
         path: 'products/:id/edit',
         component: AddEditProductComponent,
+    },
+    {
+        path: 'cart',
+        component: CartComponent,
     },
     {
         path: 'login',

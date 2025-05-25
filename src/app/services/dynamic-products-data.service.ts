@@ -31,4 +31,7 @@ export class DynamicProductsDataService {
     return this.http.delete<IProduct>(`${this.baseURL}/${productId}`);
   }
 
+  updateProductQuantity(productId: string | number, quantity: number): Observable<IProduct> {
+    return this.http.patch<IProduct>(`${this.baseURL}/${productId}`, { quantity });
+  }
 }

@@ -15,6 +15,29 @@
     color: #fff !important;
 }
 
-.navbar-nav > li {
+.navbar-nav>li {
     padding: 8px 5px;
+}
+
+@media (min-width: 992px) {
+
+    .cart-dropdown,
+    .account-dropdown {
+        display: none;
+    }
+
+    .nav-item:hover .cart-dropdown,
+    .nav-item:hover .account-dropdown {
+        display: block;
+    }
+}
+
+/* Ensure dropdown is positioned correctly */
+.dropdown-menu {
+    z-index: 1000;
+}
+
+/* Adjust padding for small screen dropdowns */
+.d-lg-none .dropdown-menu {
+    margin-top: 0.5rem;
 }

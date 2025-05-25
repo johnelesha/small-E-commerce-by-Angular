@@ -47,7 +47,7 @@ export class TodosComponent implements OnInit, OnDestroy {
     if (!this.todoInput.trim()) return;
 
     const newTodo: ITodo = {
-      text: this.todoInput.trim(),
+      task: this.todoInput.trim(),
       completed: false
     };
 

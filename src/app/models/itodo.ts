@@ -1,4 +1,4 @@
 export interface ITodo {
-    text: string;
+    task: string;
     completed: boolean;
 }
