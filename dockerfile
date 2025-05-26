@@ -1,23 +1,14 @@
-# Use official Node.js image
-FROM node:18-alpine
+# Stage 1: Build the Angular app
+FROM node:18-alpine as builder
 
-# Create app directory
-WORKDIR /usr/src/app
-
-# Copy package files
+WORKDIR /app
 COPY package*.json ./
-
-# Install dependencies
 RUN npm install
-
-# Copy source files
 COPY . .
+RUN npm run build -- --configuration=production
 
-# Build the app (if needed)
-RUN npm run build
-
-# Expose port (adjust as needed)
-EXPOSE 3000
-
-# Command to run the app
-CMD ["npm", "start"]
+# Stage 2: Serve with Nginx
+FROM nginx:alpine
+COPY --from=builder /app/dist/your-project-name /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
