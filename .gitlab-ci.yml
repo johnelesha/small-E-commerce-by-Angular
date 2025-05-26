@@ -51,3 +51,4 @@ deploy_production:
   when: manual
   only:
     - main
+
