@@ -1,6 +1,6 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { IUser } from '../models/iuser';
 import { ITodo } from '../models/itodo';
 
@@ -10,31 +10,28 @@ import { ITodo } from '../models/itodo';
 export class UsersTodosService {
   apiUrl: string = 'http://localhost:3010/users';
 
-  private currentUser: IUser | null = null;
-  userChanged$ = new EventEmitter<IUser | null>();
+  private currentUserSubject = new BehaviorSubject<IUser | null>(null);
+  currentUser$ = this.currentUserSubject.asObservable();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+      this.currentUserSubject.next(JSON.parse(user));
+    }
+  }
 
   setCurrentUser(user: IUser): void {
-    this.currentUser = user;
+    this.currentUserSubject.next(user);
     localStorage.setItem('currentUser', JSON.stringify(user));
-    this.userChanged$.emit(user);
   }
 
   getCurrentUser(): IUser | null {
-    if (!this.currentUser) {
-      const user = localStorage.getItem('currentUser');
-      if (user) {
-        this.currentUser = JSON.parse(user);
-      }
-    }
-    return this.currentUser;
+    return this.currentUserSubject.value;
   }
 
   logout(): void {
-    this.currentUser = null;
+    this.currentUserSubject.next(null);
     localStorage.removeItem('currentUser');
-    this.userChanged$.emit(null);
   }
 
   getUsers(): Observable<IUser[]> {

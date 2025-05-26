@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { IUser } from '../../models/iuser';
 import { UsersTodosService } from '../../services/users-todos.service';
 import { CartService } from '../../services/cart.service';
 import { CommonModule } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -11,13 +12,25 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, OnDestroy {
   currentUser: IUser | null = null;
   showCartDropdown: boolean = false;
   showAccountDropdown: boolean = false;
-  
-  constructor(private usersTodosService: UsersTodosService, public cartService: CartService) {
+  private userSubscription: Subscription | undefined;
+
+  constructor(private usersTodosService: UsersTodosService, public cartService: CartService) { }
+
+  ngOnInit() {
     this.currentUser = this.usersTodosService.getCurrentUser();
+    this.userSubscription = this.usersTodosService.currentUser$.subscribe(user => {
+      this.currentUser = user;
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.userSubscription) {
+      this.userSubscription.unsubscribe();
+    }
   }
 
   logout() {

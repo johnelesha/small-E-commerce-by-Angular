@@ -110,26 +110,6 @@
         }
       ],
       "id": "b3c8"
-    },
-    {
-      "id": "jo55",
-      "full_name": "john elesha",
-      "email": "jo55.elesha@gmail.com",
-      "phone": "010245566",
-      "password": "john12345",
-      "age": 25,
-      "gender": "male",
-      "todos": []
-    },
-    {
-      "id": "e489",
-      "full_name": "besho",
-      "email": "besho.elesha@gmail.com",
-      "password": "besho123",
-      "phone": "0125488565",
-      "age": 18,
-      "gender": "male",
-      "todos": []
     }
   ],
   "products": [
@@ -138,7 +118,7 @@
       "name": "Men's T-Shirt",
       "description": "Cotton crew neck t-shirt, slim fit.",
       "price": 19.99,
-      "quantity": 10,
+      "quantity": 95,
       "category": "men",
       "size": "M",
       "image": "https://contents.mediadecathlon.com/p2606947/k$1c9e0ffdefc3e67bdeabc82be7893e93/dry-men-s-running-breathable-t-shirt-red.jpg?format=auto&quality=40&f=520x520"
@@ -148,7 +128,7 @@
       "name": "Women's Blouse",
       "description": "Chiffon blouse with floral print.",
       "price": 29.99,
-      "quantity": 4,
+      "quantity": 40,
       "category": "women",
       "size": "S",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyDy_x2YxJatOe_yDEjtcqNzFq6CMV27IBTA&s"
@@ -158,7 +138,7 @@
       "name": "Men's Jeans",
       "description": "Slim fit stretch denim jeans.",
       "price": 49.99,
-      "quantity": 7,
+      "quantity": 70,
       "category": "men",
       "size": "L",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuzf3NVgI_3osDivNlBmI4VdLXrY2O-KJMcA&s"
@@ -168,7 +148,7 @@
       "name": "Women's Skirt",
       "description": "High-waisted pleated midi skirt.",
       "price": 39.95,
-      "quantity": 6,
+      "quantity": 60,
       "category": "women",
       "size": "M",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYDn22GxCO9WnvwDzwHBYviVNXg2r8T71Tuw&s"
@@ -188,7 +168,7 @@
       "name": "Women's Dress",
       "description": "Sleeveless cotton summer dress.",
       "price": 45,
-      "quantity": 4,
+      "quantity": 400,
       "category": "women",
       "size": "L",
       "image": "https://m.media-amazon.com/images/I/614gnlfQt2L._AC_SL1500_.jpg"
@@ -198,7 +178,7 @@
       "name": "Men's Hoodie",
       "description": "Fleece pullover hoodie with front pocket.",
       "price": 35,
-      "quantity": 9,
+      "quantity": 92,
       "category": "men",
       "size": "M",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6jvDy6SCWUWUibVQ6_wGGaE4Bx4VswGaASA&s"
@@ -208,7 +188,7 @@
       "name": "Women's Leggings",
       "description": "High-waist workout leggings.",
       "price": 25,
-      "quantity": 7,
+      "quantity": 74,
       "category": "women",
       "size": "S",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRICShQIVWS_JZ8LKh32p85yDLePos2PI1bPg&s"
@@ -218,7 +198,7 @@
       "name": "Men's Polo Shirt",
       "description": "Classic cotton polo with embroidered logo.",
       "price": 29.95,
-      "quantity": 3,
+      "quantity": 49,
       "category": "men",
       "size": "L",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7P1KA7uxfiFvHc9Ut17VQu1tCL_H1tMhxZQ&s"
@@ -228,7 +208,7 @@
       "name": "Women's Cardigan",
       "description": "Knit open-front cardigan sweater.",
       "price": 55,
-      "quantity": 2,
+      "quantity": 15,
       "category": "women",
       "size": "XL",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBgC7dzamE1W9Ju3F6hRuxBL7bHV8-nhWgpw&s"

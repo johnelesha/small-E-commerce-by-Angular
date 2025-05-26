@@ -27,7 +27,7 @@ export class TodosComponent implements OnInit, OnDestroy {
     if (this.currentUser) {
       this.todos = this.currentUser.todos || [];
     }
-    this.userSubscription = this.userTodosService.userChanged$.subscribe(user => {
+    this.userSubscription = this.userTodosService.currentUser$.subscribe(user => {
       this.currentUser = user;
       this.todos = user?.todos || [];
     });
